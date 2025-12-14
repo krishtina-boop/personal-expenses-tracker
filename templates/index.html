@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h2>Personal Expense Tracker</h2>
+
+    <div class="form-container">
+      <div class="form-p">
+        <form method="post" class="frm">
+          <input type="date" name="date" max="{{ today }}" />
+          <input type="text" name="category" placeholder="Category" />
+          <input type="number" name="amount" placeholder="Amount" />
+          <input type="text" name="note" placeholder="Description" />
+
+          <br /><br />
+
+          <div class="btn-row">
+            <button type="submit" name="action" value="add">Add Expense</button>
+            <button type="submit" name="action" value="total">
+              Show Total
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <hr />
+
+    {% if expenses %}
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+
+      {% for exp in expenses %}
+      <tr>
+        <td>{{ exp.date }}</td>
+        <td>{{ exp.category }}</td>
+        <td>Rs. {{ exp.amount }}</td>
+        <td>{{ exp.note }}</td>
+        <td>
+          <form method="post" style="display: inline">
+            <input type="hidden" name="index" value="{{ loop.index0 }}" />
+            <button type="submit" name="action" value="delete" id="delete">
+              Delete
+            </button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %} {% if show_total %}
+    <h3>Total Expense: Rs. {{ total }}</h3>
+    {% endif %}
+  </body>
+</html>

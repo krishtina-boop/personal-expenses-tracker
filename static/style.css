@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Story+Script&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d3eed4;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Title styling */
+h2 {
+  text-align: center;
+  color: #4caf50;
+}
+
+/* Form styling */
+.frm {
+  margin: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Input fields styling */
+.frm input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #07391a;
+  box-sizing: border-box;
+}
+
+/* Buttons styling */
+
+.btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+button{
+    all: unset;
+}
+.btn-row button {
+  padding: 10px 20px;
+  margin: 10px 5px 0 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4caf50;
+  transition: background 0.3s;
+}
+form button:hover {
+  background-color: #45a049;
+}
+
+/* Table styling */
+table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header */
+th {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Table cells */
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row color */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Total expense styling */
+h3 {
+  text-align: center;
+  color: #e91e63;
+  margin-top: 20px;
+}
+#delete{
+    color:red;
+}
