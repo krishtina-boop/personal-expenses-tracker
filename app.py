@@ -8,13 +8,13 @@ expenses = []
 @app.route("/", methods=["GET", "POST"])
 def index():
     show_total = False
-    today = date.today().isoformat()  # ✅ works now
+    today = date.today().isoformat() 
 
     if request.method == "POST":
         action = request.form.get("action")
 
         if action == "add":
-            expense_date = request.form["date"]  # ✅ renamed
+            expense_date = request.form["date"] 
             category = request.form["category"]
             amount = float(request.form["amount"])
             note = request.form["note"]
